@@ -337,7 +337,7 @@ export class DashboardPlugin
     };
 
     const registerDashboardItemCreator = (creator: DashboardCreator) => {
-      if (!this.dashboardItemCreators.find((c) => c.name === creator.name)) {
+      if (this.dashboardItemCreators.find((c) => c.id === creator.id)) {
         throw new Error(`DashboardItemCreator ${creator.name} is registered twice`);
       }
       this.dashboardItemCreators.push(creator);
