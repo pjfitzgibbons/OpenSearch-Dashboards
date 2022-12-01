@@ -4,8 +4,10 @@ exports[`after fetch hideWriteControls 1`] = `
 <I18nProvider>
   <TableListView
     createItem={null}
+    dashboardItemCreators={Array []}
     deleteItems={null}
     editItem={null}
+    editItemAvailable={null}
     entityName="dashboard"
     entityNamePlural="dashboards"
     findItems={[Function]}
@@ -37,6 +39,12 @@ exports[`after fetch hideWriteControls 1`] = `
           "field": "title",
           "name": "Title",
           "render": [Function],
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
+          "field": "type",
+          "name": "Type",
           "sortable": true,
         },
         Object {
@@ -287,6 +295,12 @@ exports[`after fetch renders call to action when no dashboards exist 1`] = `
         },
         Object {
           "dataType": "string",
+          "field": "type",
+          "name": "Type",
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
           "field": "description",
           "name": "Description",
           "sortable": true,
@@ -406,6 +420,12 @@ exports[`after fetch renders table rows 1`] = `
           "field": "title",
           "name": "Title",
           "render": [Function],
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
+          "field": "type",
+          "name": "Type",
           "sortable": true,
         },
         Object {
@@ -533,6 +553,12 @@ exports[`after fetch renders warning when listingLimit is exceeded 1`] = `
         },
         Object {
           "dataType": "string",
+          "field": "type",
+          "name": "Type",
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
           "field": "description",
           "name": "Description",
           "sortable": true,
@@ -651,6 +677,12 @@ exports[`renders empty page in before initial fetch to avoid flickering 1`] = `
           "field": "title",
           "name": "Title",
           "render": [Function],
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
+          "field": "type",
+          "name": "Type",
           "sortable": true,
         },
         Object {

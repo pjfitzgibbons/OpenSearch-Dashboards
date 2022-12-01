@@ -45,9 +45,10 @@ import {
   AppMountParameters,
 } from 'opensearch-dashboards/public';
 import { UsageCollectionSetup } from 'src/plugins/usage_collection/public';
+import { DashboardListSources, DashboardCreators } from 'src/plugins/dashboard/public/types';
 import { Storage } from '../../../opensearch_dashboards_utils/public';
 // @ts-ignore
-import { initDashboardApp } from './legacy_app';
+import { DashboardListItem, DashboardListProviderFn, initDashboardApp } from './legacy_app';
 import { EmbeddableStart } from '../../../embeddable/public';
 import { NavigationPublicPluginStart as NavigationStart } from '../../../navigation/public';
 import { DataPublicPluginStart } from '../../../data/public';
@@ -71,6 +72,8 @@ export interface RenderDeps {
   navigation: NavigationStart;
   savedObjectsClient: SavedObjectsClientContract;
   savedDashboards: SavedObjectLoader;
+  dashboardListSources: DashboardListSources;
+  dashboardItemCreators: DashboardCreators;
   dashboardConfig: OpenSearchDashboardsLegacyStart['dashboardConfig'];
   dashboardCapabilities: any;
   embeddableCapabilities: {
@@ -141,12 +144,11 @@ function createLocalAngularModule() {
   createLocalI18nModule();
   createLocalIconModule();
 
-  const dashboardAngularModule = angular.module(moduleName, [
+  return angular.module(moduleName, [
     ...thirdPartyAngularDependencies,
     'app/dashboard/I18n',
     'app/dashboard/icon',
   ]);
-  return dashboardAngularModule;
 }
 
 function createLocalIconModule() {
