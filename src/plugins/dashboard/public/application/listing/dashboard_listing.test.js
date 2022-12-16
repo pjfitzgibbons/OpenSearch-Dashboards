@@ -71,6 +71,9 @@ test('renders empty page in before initial fetch to avoid flickering', () => {
       createItem={() => {}}
       editItem={() => {}}
       getViewUrl={() => {}}
+      dashboardItemCreatorClickHandler={() => {}}
+      dashboardItemCreators={() => []}
+      initialPageSize={10}
       listingLimit={1000}
       hideWriteControls={false}
       core={{ notifications: { toasts: {} }, uiSettings: { get: jest.fn(() => 10) } }}
@@ -88,6 +91,8 @@ describe('after fetch', () => {
         createItem={() => {}}
         editItem={() => {}}
         getViewUrl={() => {}}
+        dashboardItemCreatorClickHandler={() => {}}
+        dashboardItemCreators={() => []}
         listingLimit={1000}
         hideWriteControls={false}
         initialPageSize={10}
@@ -112,6 +117,8 @@ describe('after fetch', () => {
         createItem={() => {}}
         editItem={() => {}}
         getViewUrl={() => {}}
+        dashboardItemCreatorClickHandler={() => {}}
+        dashboardItemCreators={() => []}
         listingLimit={1000}
         initialPageSize={10}
         hideWriteControls={false}
@@ -135,6 +142,8 @@ describe('after fetch', () => {
         createItem={() => {}}
         editItem={() => {}}
         getViewUrl={() => {}}
+        dashboardItemCreatorClickHandler={() => {}}
+        dashboardItemCreators={() => []}
         listingLimit={1}
         initialPageSize={10}
         hideWriteControls={false}
@@ -158,6 +167,8 @@ describe('after fetch', () => {
         createItem={() => {}}
         editItem={() => {}}
         getViewUrl={() => {}}
+        dashboardItemCreatorClickHandler={() => {}}
+        dashboardItemCreators={() => []}
         listingLimit={1}
         initialPageSize={10}
         hideWriteControls={true}
@@ -181,6 +192,8 @@ describe('after fetch', () => {
         createItem={() => {}}
         editItem={() => {}}
         getViewUrl={() => {}}
+        dashboardItemCreatorClickHandler={() => {}}
+        dashboardItemCreators={() => []}
         listingLimit={1}
         initialPageSize={10}
         hideWriteControls={false}

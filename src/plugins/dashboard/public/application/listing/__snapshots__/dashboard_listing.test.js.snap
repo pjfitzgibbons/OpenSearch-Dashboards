@@ -4,6 +4,7 @@ exports[`after fetch hideWriteControls 1`] = `
 <I18nProvider>
   <TableListView
     createItem={null}
+    dashboardItemCreatorClickHandler={[Function]}
     dashboardItemCreators={Array []}
     deleteItems={null}
     editItem={null}
@@ -91,6 +92,8 @@ exports[`after fetch initialFilter 1`] = `
 <I18nProvider>
   <TableListView
     createItem={[Function]}
+    dashboardItemCreatorClickHandler={[Function]}
+    dashboardItemCreators={[Function]}
     deleteItems={[Function]}
     editItem={[Function]}
     entityName="dashboard"
@@ -172,6 +175,12 @@ exports[`after fetch initialFilter 1`] = `
         },
         Object {
           "dataType": "string",
+          "field": "type",
+          "name": "Type",
+          "sortable": true,
+        },
+        Object {
+          "dataType": "string",
           "field": "description",
           "name": "Description",
           "sortable": true,
@@ -214,6 +223,8 @@ exports[`after fetch renders call to action when no dashboards exist 1`] = `
 <I18nProvider>
   <TableListView
     createItem={[Function]}
+    dashboardItemCreatorClickHandler={[Function]}
+    dashboardItemCreators={[Function]}
     deleteItems={[Function]}
     editItem={[Function]}
     entityName="dashboard"
@@ -343,6 +354,8 @@ exports[`after fetch renders table rows 1`] = `
 <I18nProvider>
   <TableListView
     createItem={[Function]}
+    dashboardItemCreatorClickHandler={[Function]}
+    dashboardItemCreators={[Function]}
     deleteItems={[Function]}
     editItem={[Function]}
     entityName="dashboard"
@@ -472,6 +485,8 @@ exports[`after fetch renders warning when listingLimit is exceeded 1`] = `
 <I18nProvider>
   <TableListView
     createItem={[Function]}
+    dashboardItemCreatorClickHandler={[Function]}
+    dashboardItemCreators={[Function]}
     deleteItems={[Function]}
     editItem={[Function]}
     entityName="dashboard"
@@ -601,6 +616,8 @@ exports[`renders empty page in before initial fetch to avoid flickering 1`] = `
 <I18nProvider>
   <TableListView
     createItem={[Function]}
+    dashboardItemCreatorClickHandler={[Function]}
+    dashboardItemCreators={[Function]}
     deleteItems={[Function]}
     editItem={[Function]}
     entityName="dashboard"
@@ -608,6 +625,7 @@ exports[`renders empty page in before initial fetch to avoid flickering 1`] = `
     findItems={[Function]}
     headingId="dashboardListingHeading"
     initialFilter=""
+    initialPageSize={10}
     listingLimit={1000}
     noItemsFragment={
       <div>
