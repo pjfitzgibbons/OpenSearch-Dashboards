@@ -34,7 +34,7 @@ import { createHashHistory } from 'history';
 import { from, Observable, concat } from 'rxjs';
 import { filter, map, mergeMap, reduce } from 'rxjs/operators';
 
-import { DashboardCreatorFn } from '../../common/types';
+import { DashboardCreatorFn, DashboardListItem, DashboardListItems } from '../../common/types';
 import dashboardTemplate from './dashboard_app.html';
 import dashboardListingTemplate from './listing/dashboard_listing_ng_wrapper.html';
 
@@ -50,16 +50,6 @@ import { DashboardListing, EMPTY_FILTER } from './listing/dashboard_listing';
 import { addHelpMenuToAppChrome } from './help_menu/help_menu_util';
 import { syncQueryStateWithUrl } from '../../../data/public';
 
-export interface DashboardListItem {
-  id: string; // plugin identifier
-  title: string; // item title
-  type: string; // item type display string
-  description: string; // item description
-  url: string; // redirect url to item detail
-  listType: string; // item type key
-}
-
-export type DashboardListItems = DashboardListItem[];
 export type DashboardListProviderFn = () => Observable<DashboardListItems>;
 export interface DashboardDisplay {
   hits: DashboardListItems;
@@ -188,8 +178,9 @@ export function initDashboardApp(app, deps) {
             const matchSearchToItem: (item: DashboardListItem) => boolean = (item) => {
               const matchedTitle = !!item.title.match(searchRx);
               const matchedDescription = !!item.description.match(searchRx);
+              const matchedType = !!item.type.match(searchRx);
 
-              return matchedTitle || matchedDescription;
+              return matchedTitle || matchedDescription || matchedType;
             };
 
             const searchFiltered$ = combined$.pipe(filter(matchSearchToItem));

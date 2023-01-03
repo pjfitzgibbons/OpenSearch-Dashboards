@@ -29,7 +29,6 @@
  */
 
 import * as React from 'react';
-import { Observable } from 'rxjs';
 import { CoreStart } from '../../../../core/public';
 import { OpenSearchDashboardsReactOverlays } from '../overlays';
 import { OpenSearchDashboardsReactNotifications } from '../notifications';
@@ -49,23 +48,6 @@ export interface OpenSearchDashboardsReactContext<T extends OpenSearchDashboards
   Provider: React.FC<{ services?: T }>;
   Consumer: React.Consumer<OpenSearchDashboardsReactContextValue<T>>;
 }
-
-export interface DashboardListSource {
-  name: string;
-  listProviderFn: () => Observable<DashboardListItem>;
-}
-
-export type DashboardListSources = DashboardListSource[];
-
-export interface DashboardListItem {
-  id: string;
-  title: string;
-  type: string;
-  description: string;
-  url: string;
-  listType: string;
-}
-export type DashboardListItems = DashboardListItem[];
 
 export type DashboardCreators = DashboardCreator[];
 

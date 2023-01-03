@@ -125,7 +125,7 @@ import {
   DashboardCreators,
   DashboardCreator,
   DashboardListItems,
-} from './types';
+} from '../common/types';
 
 declare module '../../share/public' {
   export interface UrlGeneratorStateMapping {
@@ -337,6 +337,9 @@ export class DashboardPlugin
     };
 
     const registerDashboardItemCreator = (creator: DashboardCreator) => {
+      if (!this.dashboardItemCreators.find((c) => c.name === creator.name)) {
+        throw new Error(`DashboardItemCreator ${creator.name} is registered twice`);
+      }
       this.dashboardItemCreators.push(creator);
     };
 
