@@ -10,8 +10,8 @@ import {
   EuiContextMenuPanel,
   EuiFlexItem,
   EuiPopover,
+  EuiSplitButton,
 } from '@elastic/eui';
-import type { DashboardProvider } from '../../../types';
 
 interface CreateButtonProps {
   dashboardProviders?: { [key: string]: DashboardProvider };
@@ -47,15 +47,18 @@ const CreateButton = (props: CreateButtonProps) => {
 
   const renderCreateMenuDropDown = () => {
     const button = (
-      <EuiButton
-        iconType="arrowDown"
-        iconSide="right"
-        onClick={onMenuButtonClick}
-        fill
-        data-test-subj="createMenuDropdown"
-      >
-        <FormattedMessage id="dashboard.listing.createButtonText" defaultMessage="Create" />
-      </EuiButton>
+      <>
+        <EuiSplitButton fill>Test</EuiSplitButton>
+        <EuiButton
+          iconType="arrowDown"
+          iconSide="right"
+          onClick={onMenuButtonClick}
+          fill
+          data-test-subj="createMenuDropdown"
+        >
+          <FormattedMessage id="dashboard.listing.createButtonText" defaultMessage="Create" />
+        </EuiButton>
+      </>
     );
 
     return (
